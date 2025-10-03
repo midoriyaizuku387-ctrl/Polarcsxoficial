@@ -1,165 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Polarcsx - Mundo de Accesorios</title>
-  <style>
-    /* Reset y base */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Arial',sans-serif; background:#0a0a0a; color:#fff; line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mundo de Accesorios - Gamer Neon</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+    }
 
-    /* Cabecera */
     header {
-      background: linear-gradient(90deg, #00ffff, #ff00ff);
-      text-align:center;
-      padding:50px 20px;
-    }
-    header h1 {
-      font-family:'Courier New',monospace;
-      font-size:2.8em;
-      color:#00ffff;
-      text-shadow:0 0 10px #00ffff,0 0 20px #ff00ff;
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(90deg, #00f0ff, #ff00ff);
+        font-size: 24px;
+        font-weight: bold;
     }
 
-    /* Navegación */
-    nav {
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      margin-top:20px;
-    }
-    nav a {
-      padding:12px 20px;
-      border-radius:10px;
-      background: rgba(0,0,0,0.3);
-      font-weight:bold;
-      text-transform:uppercase;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background: linear-gradient(90deg,#00ffff,#ff00ff);
-      box-shadow:0 0 15px #00ffff,0 0 25px #ff00ff;
-      transform: scale(1.05);
+    .tarjetas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 15px;
     }
 
-    /* Sección de Temas/Productos */
-    .temas-container {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:25px;
-      margin:40px auto;
-      max-width:1200px;
-    }
-    .tema-card {
-      background: linear-gradient(135deg,#00ffff,#ff00ff);
-      border-radius:20px;
-      width:220px;
-      height:150px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      color:#fff;
-      text-align:center;
-      transition: all 0.4s ease;
-      cursor:pointer;
-      overflow:hidden;
-      position:relative;
-    }
-    .tema-card:hover {
-      transform: scale(1.08);
-      box-shadow:0 0 20px #ff00ff,0 0 30px #00ffff;
-    }
-    .tema-icon {
-      width:50px;
-      height:50px;
-      margin-bottom:10px;
-      object-fit:contain;
+    .tarjeta {
+        background: #111;
+        border: 2px solid #00f0ff;
+        border-radius: 12px;
+        width: 140px;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
     }
 
-    /* Contenido principal */
-    .contenido-principal {
-      max-width:1100px;
-      margin:40px auto;
-      padding:25px;
-      background: rgba(0,0,0,0.6);
-      border-radius:20px;
-      text-align:center;
-    }
-    .contenido-principal h2 {
-      color:#00ffff;
-      text-shadow:0 0 10px #00ffff,0 0 20px #ff00ff;
-    }
-    .contenido-principal p {
-      font-size:1.1em;
-      line-height:1.5;
-      color:#fff;
+    .tarjeta:hover {
+        transform: scale(1.05);
+        border-color: #ff00ff;
     }
 
-    /* Footer */
-    footer {
-      background: rgba(0,0,0,0.5);
-      padding:20px;
-      text-align:center;
-      color:#ff00ff;
-      text-shadow:0 0 10px #ff00ff;
+    .tarjeta img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
     }
-  </style>
+
+    .tarjeta p {
+        margin: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    @media (max-width: 480px) {
+        .tarjeta {
+            width: 120px;
+            height: 120px;
+        }
+
+        .tarjeta img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .tarjeta p {
+            font-size: 12px;
+        }
+    }
+
+    /* Sección de contenido dinámico */
+    #contenido {
+        padding: 20px;
+        text-align: center;
+        display: none;
+    }
+</style>
 </head>
-
 <body>
-  <!-- Cabecera -->
-  <header>
-    <h1>Polarcsx<br /><span style="font-size:0.7em;">Mundo de Accesorios Electrónicos</span></h1>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Temas</a>
-      <a href="#">Productos</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
 
-  <!-- Sección de Temas/Productos -->
-  <div class="temas-container">
-    <div class="tema-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25425.png" alt="Teclado" class="tema-icon" />
-      <h2>Teclados</h2>
-      <p>Gaming y mecánicos</p>
-    </div>
-    <div class="tema-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/32/32354.png" alt="Mouse" class="tema-icon" />
-      <h2>Mouse</h2>
-      <p>Precisión y estilo</p>
-    </div>
-    <div class="tema-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/727/727269.png" alt="Auriculares" class="tema-icon" />
-      <h2>Auriculares</h2>
-      <p>Sonido envolvente</p>
-    </div>
-    <div class="tema-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/0/393.png" alt="Consola" class="tema-icon" />
-      <h2>Consolas</h2>
-      <p>Para gamers profesionales</p>
-    </div>
-    <div class="tema-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/182/182191.png" alt="Monitor" class="tema-icon" />
-      <h2>Monitores</h2>
-      <p>Alta resolución</p>
-    </div>
-  </div>
+<header>Mundo de Accesorios Electrónicos - Gamer Neon</header>
 
-  <!-- Contenido Principal -->
-  <div class="contenido-principal">
-    <h2>Bienvenido a Polarcsx</h2>
-    <p>Aquí encontrarás los mejores accesorios electrónicos para gamers, con estilo neon y profesional. Personaliza esta área con tus productos, noticias o entradas de blog.</p>
-  </div>
+<div class="tarjetas">
+    <div class="tarjeta" onclick="mostrarContenido('Teclados')">
+        <img src="https://img.icons8.com/ios-filled/100/00ffff/keyboard.png" alt="Teclado">
+        <p>Teclados</p>
+    </div>
+    <div class="tarjeta" onclick="mostrarContenido('Mouse')">
+        <img src="https://img.icons8.com/ios-filled/100/00ffff/mouse.png" alt="Mouse">
+        <p>Mouse</p>
+    </div>
+    <div class="tarjeta" onclick="mostrarContenido('Auriculares')">
+        <img src="https://img.icons8.com/ios-filled/100/00ffff/headphones.png" alt="Auriculares">
+        <p>Auriculares</p>
+    </div>
+    <div class="tarjeta" onclick="mostrarContenido('Consolas')">
+        <img src="https://img.icons8.com/ios-filled/100/00ffff/game-controller.png" alt="Consola">
+        <p>Consolas</p>
+    </div>
+    <div class="tarjeta" onclick="mostrarContenido('Monitores')">
+        <img src="https://img.icons8.com/ios-filled/100/00ffff/monitor.png" alt="Monitor">
+        <p>Monitores</p>
+    </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Polarcsx - Todos los derechos reservados
-  </footer>
+<div id="contenido">
+    <h2 id="tituloContenido"></h2>
+    <p>Este es un ejemplo de contenido para la categoría seleccionada.</p>
+</div>
+
+<script>
+function mostrarContenido(categoria) {
+    document.getElementById('tituloContenido').textContent = categoria;
+    document.getElementById('contenido').style.display = 'block';
+}
+</script>
+
 </body>
 </html>
