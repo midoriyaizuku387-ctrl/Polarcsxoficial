@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundo de Accesorios</title>
+<title>Mundo de Polarcsx Multitienda</title>
 <style>
     body {
         margin: 0;
@@ -65,6 +65,25 @@
         display: none;
     }
 
+    section {
+        padding: 40px 20px;
+        text-align: center;
+        border-top: 2px solid #00f0ff;
+    }
+
+    section h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        color: #00f0ff;
+    }
+
+    section p {
+        font-size: 16px;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
     footer {
         background: #111;
         border-top: 2px solid #00f0ff;
@@ -120,12 +139,15 @@
             height: 30px;
             margin: 0 5px;
         }
+        section p {
+            font-size: 14px;
+        }
     }
 </style>
 </head>
 <body>
 
-<header>Mundo de Accesorios Electrónicos</header>
+<header>Mundo de Polarcsx Multitienda</header>
 
 <div class="tarjetas">
     <div class="tarjeta" onclick="mostrarContenido('Teclados')">
@@ -154,6 +176,22 @@
     <h2 id="tituloContenido"></h2>
     <p>Este es un ejemplo de contenido para la categoría seleccionada.</p>
 </div>
+
+<!-- Secciones adicionales -->
+<section id="acerca">
+    <h2>Acerca de</h2>
+    <p>Bienvenido a Mundo de Polarcsx Multitienda, tu tienda online para accesorios y dispositivos electrónicos de la más alta calidad. Nos dedicamos a ofrecer productos confiables y al mejor precio para gamers y entusiastas de la tecnología.</p>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes comunicarte con nosotros a través de nuestras redes sociales o enviándonos un correo a <strong>contacto@polarcsx.com</strong>. Estamos disponibles para responder tus dudas, pedidos o sugerencias.</p>
+</section>
+
+<section id="privacidad">
+    <h2>Aviso de Privacidad</h2>
+    <p>En Mundo de Polarcsx Multitienda respetamos tu privacidad. La información que compartas con nosotros será utilizada únicamente para procesar pedidos y mejorar la experiencia de nuestros clientes. No compartimos tus datos con terceros sin tu consentimiento.</p>
+</section>
 
 <footer>
     <!-- Redes sociales -->
