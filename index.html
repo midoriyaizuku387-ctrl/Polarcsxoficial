@@ -59,27 +59,68 @@
         text-align: center;
     }
 
+    #contenido {
+        padding: 20px;
+        text-align: center;
+        display: none;
+    }
+
+    /* Footer */
+    footer {
+        background: #111;
+        border-top: 2px solid #00f0ff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .socials {
+        margin-bottom: 15px;
+    }
+
+    .socials a img {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+        transition: transform 0.2s;
+    }
+
+    .socials a img:hover {
+        transform: scale(1.2);
+    }
+
+    .footer-links a {
+        color: #00f0ff;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+        color: #ff00ff;
+    }
+
+    .footer-links p {
+        margin: 10px 0 0 0;
+        font-size: 12px;
+    }
+
     @media (max-width: 480px) {
         .tarjeta {
             width: 120px;
             height: 120px;
         }
-
         .tarjeta img {
             width: 40px;
             height: 40px;
         }
-
         .tarjeta p {
             font-size: 12px;
         }
-    }
-
-    /* Sección de contenido dinámico */
-    #contenido {
-        padding: 20px;
-        text-align: center;
-        display: none;
+        .socials a img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
     }
 </style>
 </head>
@@ -114,6 +155,35 @@
     <h2 id="tituloContenido"></h2>
     <p>Este es un ejemplo de contenido para la categoría seleccionada.</p>
 </div>
+
+<footer>
+    <!-- Redes sociales -->
+    <div class="socials">
+        <a href="https://www.facebook.com/share/1J9f7LiZbG/" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/polarcs_x?igsh=dDlqdHVlcWxmb21t" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+        </a>
+        <a href="https://x.com/Polar_cs_edits?t=zmRtc-Ouh-SXFrHU7qvNwA&s=09" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter">
+        </a>
+        <a href="https://www.tiktok.com/@polarcsxxx?_t=ZS-90EfhS38516&_r=1" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
+        </a>
+        <a href="https://youtube.com/@polarcsuwu?si=p2RW2r7J-G-7raKY" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube">
+        </a>
+    </div>
+
+    <!-- Enlaces importantes -->
+    <div class="footer-links">
+        <a href="#acerca">Acerca de</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#privacidad">Aviso de Privacidad</a>
+        <p>&copy; 2025 Polarcsx. Todos los derechos reservados.</p>
+    </div>
+</footer>
 
 <script>
 function mostrarContenido(categoria) {
