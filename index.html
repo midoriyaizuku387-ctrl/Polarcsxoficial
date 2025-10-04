@@ -5,178 +5,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mundo de Polarcsx Multitienda</title>
 <style>
-html {
-    scroll-behavior: smooth; /* Scroll suave */
-}
-
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background: #0a0a0a;
     color: #fff;
-}
-
-/* Animación de gradiente en header */
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+    line-height: 1.6;
 }
 
 header {
-    padding: 60px 20px;
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    position: relative;
-    background: linear-gradient(270deg, rgba(0,255,255,0.7), rgba(255,0,255,0.7), rgba(0,255,0,0.7));
-    background-size: 600% 600%;
+    padding: 60px 20px;
+    background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrsP60jsLS9wI9KDmaxj1FS57TT8yfyRB5bkb6WPgIvvGXrvpakosVLw0cG5AmwuA2Ozzzb5cPc3404cWeMcVv7M7SWWdpUtNKty3ft6WjS5hOitdjzgXcacWmZJWMNN43fSytTJME39fgWVKpGZLKYic_t-w8iF6xQ7yw8ENxUztoOWSawpXa0s5XPdT5/s1536/file_000000005da061f9a8482218062b016b.png') no-repeat center center;
+    background-size: cover;
+    color: #00f0ff;
 }
-
-header::after {
-    content: '';
-    position: absolute;
-    top:0; left:0;
-    width:100%;
-    height:100%;
-    background: url('TU_ENLACE_DIRECTO_DEL_LOGO') center/cover no-repeat;
-    opacity: 0.2; /* Ajusta la opacidad del logo */
-}
-
 header h1 {
-    position: relative;
-    z-index: 1;
-    margin: 0;
+    font-size: 2em;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
 }
 
-/* Aplica la animación */
-header {
-    animation: gradientBG 10s ease infinite;
-}
-
-.tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+/* Tarjetas de temas */
+#tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
+    padding: 20px;
 }
-
-.tarjeta {
+.card {
     background: #111;
-    border: 2px solid #00f0ff;
     border-radius: 12px;
-    width: 140px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    transition: transform 0.2s;
     cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
 }
-
-.tarjeta:hover {
+.card:hover {
     transform: scale(1.05);
-    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(255,0,255,0.5);
 }
-
-.tarjeta img {
-    width: 50px;
-    height: 50px;
+.card img {
+    width: 60px;
     margin-bottom: 10px;
 }
 
-.tarjeta p {
-    margin: 0;
-    font-size: 14px;
-    text-align: center;
+/* Redes sociales */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
 }
-
-#contenido {
-    padding: 20px;
-    text-align: center;
-    display: none;
-}
-
-section {
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 2px solid #00f0ff;
-}
-
-section h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: #00f0ff;
-}
-
-section p {
-    font-size: 16px;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.5;
-}
-
-footer {
-    background: #111;
-    border-top: 2px solid #00f0ff;
-    padding: 20px;
-    text-align: center;
-}
-
-.socials {
-    margin-bottom: 15px;
-}
-
-.socials a img {
+.social a img {
     width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.2s;
+    transition: transform 0.3s;
 }
-
-.socials a img:hover {
+.social a img:hover {
     transform: scale(1.2);
 }
 
-.footer-links a {
-    color: #00f0ff;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.2s;
+/* Acordeón */
+.acordeon {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
 }
-
-.footer-links a:hover {
+.acordeon-item {
+    border-bottom: 1px solid #00f0ff;
+}
+.acordeon-titulo {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    background: #111;
+    color: #00f0ff;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.acordeon-titulo:hover {
+    background: #222;
     color: #ff00ff;
 }
-
-.footer-links p {
-    margin: 10px 0 0 0;
-    font-size: 12px;
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: #1a1a1a;
+    padding: 0 20px;
+}
+.acordeon-contenido p,
+.acordeon-contenido img {
+    margin: 15px 0;
+}
+.acordeon-contenido img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+}
+.acordeon-item.activo .acordeon-contenido {
+    max-height: 500px;
+    padding: 20px;
 }
 
-@media (max-width: 480px) {
-    .tarjeta {
-        width: 120px;
-        height: 120px;
-    }
-    .tarjeta img {
-        width: 40px;
-        height: 40px;
-    }
-    .tarjeta p {
-        font-size: 12px;
-    }
-    .socials a img {
-        width: 30px;
-        height: 30px;
-        margin: 0 5px;
-    }
-    section p {
-        font-size: 14px;
-    }
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #888;
 }
 </style>
 </head>
@@ -186,81 +129,73 @@ footer {
     <h1>Mundo de Polarcsx Multitienda</h1>
 </header>
 
-<div class="tarjetas">
-    <div class="tarjeta" onclick="mostrarContenido('Teclados')">
-        <img src="https://img.icons8.com/ios-filled/100/00ffff/keyboard.png" alt="Teclado">
-        <p>Teclados</p>
+<!-- Tarjetas Temas -->
+<section id="tarjetas">
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/00ffff/keyboard.png"/><p>Teclados</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/00ffff/mouse.png"/><p>Mouse</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/00ffff/headphones.png"/><p>Auriculares</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/00ffff/controller.png"/><p>Consolas</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/00ffff/monitor.png"/><p>Monitores</p></div>
+</section>
+
+<!-- Acordeón de detalles -->
+<section id="temas">
+    <h2 style="text-align:center; color:#00f0ff;">Detalles de Productos</h2>
+    <div class="acordeon">
+
+        <div class="acordeon-item">
+            <div class="acordeon-titulo">🎹 Teclado Gamer <span>+</span></div>
+            <div class="acordeon-contenido">
+                <h3>Características</h3>
+                <p>Aquí puedes colocar la descripción del teclado gamer, funciones y compatibilidad.</p>
+                <img src="https://img.icons8.com/ios-filled/200/00ffff/keyboard.png" alt="Teclado">
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <div class="acordeon-titulo">🖱️ Mouse Pro <span>+</span></div>
+            <div class="acordeon-contenido">
+                <h3>Detalles</h3>
+                <p>Agrega aquí la información sobre DPI, sensores y conectividad.</p>
+                <img src="https://img.icons8.com/ios-filled/200/00ffff/mouse.png" alt="Mouse">
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <div class="acordeon-titulo">🎧 Auriculares <span>+</span></div>
+            <div class="acordeon-contenido">
+                <h3>Especificaciones</h3>
+                <p>Puedes añadir compatibilidad con consolas y PC, calidad de sonido, etc.</p>
+                <img src="https://img.icons8.com/ios-filled/200/00ffff/headphones.png" alt="Auriculares">
+            </div>
+        </div>
+
     </div>
-    <div class="tarjeta" onclick="mostrarContenido('Mouse')">
-        <img src="https://img.icons8.com/ios-filled/100/00ffff/mouse.png" alt="Mouse">
-        <p>Mouse</p>
-    </div>
-    <div class="tarjeta" onclick="mostrarContenido('Auriculares')">
-        <img src="https://img.icons8.com/ios-filled/100/00ffff/headphones.png" alt="Auriculares">
-        <p>Auriculares</p>
-    </div>
-    <div class="tarjeta" onclick="mostrarContenido('Consolas')">
-        <img src="https://img.icons8.com/ios-filled/100/00ffff/game-controller.png" alt="Consola">
-        <p>Consolas</p>
-    </div>
-    <div class="tarjeta" onclick="mostrarContenido('Monitores')">
-        <img src="https://img.icons8.com/ios-filled/100/00ffff/monitor.png" alt="Monitor">
-        <p>Monitores</p>
-    </div>
+</section>
+
+<!-- Redes Sociales -->
+<div class="social">
+    <a href="https://www.facebook.com/share/1J9f7LiZbG/" target="_blank"><img src="https://img.icons8.com/ios-filled/100/00ffff/facebook.png" alt="Facebook"></a>
+    <a href="https://www.instagram.com/polarcs_x?igsh=dDlqdHVlcWxmb21t" target="_blank"><img src="https://img.icons8.com/ios-filled/100/00ffff/instagram.png" alt="Instagram"></a>
+    <a href="https://x.com/Polar_cs_edits?t=zmRtc-Ouh-SXFrHU7qvNwA&s=09" target="_blank"><img src="https://img.icons8.com/ios-filled/100/00ffff/twitter.png" alt="Twitter"></a>
+    <a href="https://www.tiktok.com/@polarcsxxx?_t=ZS-90EfhS38516&_r=1" target="_blank"><img src="https://img.icons8.com/ios-filled/100/00ffff/tiktok.png" alt="TikTok"></a>
+    <a href="https://youtube.com/@polarcsuwu?si=p2RW2r7J-G-7raKY" target="_blank"><img src="https://img.icons8.com/ios-filled/100/00ffff/youtube-play.png" alt="YouTube"></a>
 </div>
-
-<div id="contenido">
-    <h2 id="tituloContenido"></h2>
-    <p>Este es un ejemplo de contenido para la categoría seleccionada.</p>
-</div>
-
-<section id="acerca">
-    <h2>Acerca de</h2>
-    <p>Bienvenido a Mundo de Polarcsx Multitienda, tu tienda online para accesorios y dispositivos electrónicos de la más alta calidad. Nos dedicamos a ofrecer productos confiables y al mejor precio para gamers y entusiastas de la tecnología.</p>
-</section>
-
-<section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes comunicarte con nosotros a través de nuestras redes sociales o enviándonos un correo a <strong>contacto@polarcsx.com</strong>. Estamos disponibles para responder tus dudas, pedidos o sugerencias.</p>
-</section>
-
-<section id="privacidad">
-    <h2>Aviso de Privacidad</h2>
-    <p>En Mundo de Polarcsx Multitienda respetamos tu privacidad. La información que compartas con nosotros será utilizada únicamente para procesar pedidos y mejorar la experiencia de nuestros clientes. No compartimos tus datos con terceros sin tu consentimiento.</p>
-</section>
 
 <footer>
-    <div class="socials">
-        <a href="https://www.facebook.com/share/1J9f7LiZbG/" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/polarcs_x?igsh=dDlqdHVlcWxmb21t" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
-        </a>
-        <a href="https://x.com/Polar_cs_edits?t=zmRtc-Ouh-SXFrHU7qvNwA&s=09" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter">
-        </a>
-        <a href="https://www.tiktok.com/@polarcsxxx?_t=ZS-90EfhS38516&_r=1" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
-        </a>
-        <a href="https://youtube.com/@polarcsuwu?si=p2RW2r7J-G-7raKY" target="_blank">
-            <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube">
-        </a>
-    </div>
-
-    <div class="footer-links">
-        <a href="#acerca">Acerca de</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#privacidad">Aviso de Privacidad</a>
-        <p>&copy; 2025 Polarcsx. Todos los derechos reservados.</p>
-    </div>
+    <p>&copy; 2025 Mundo de Polarcsx Multitienda. Todos los derechos reservados.</p>
 </footer>
 
 <script>
-function mostrarContenido(categoria) {
-    document.getElementById('tituloContenido').textContent = categoria;
-    document.getElementById('contenido').style.display = 'block';
-}
+// Script del acordeón
+document.querySelectorAll(".acordeon-titulo").forEach((titulo) => {
+    titulo.addEventListener("click", () => {
+        const item = titulo.parentElement;
+        item.classList.toggle("activo");
+        const simbolo = titulo.querySelector("span");
+        simbolo.textContent = item.classList.contains("activo") ? "-" : "+";
+    });
+});
 </script>
 
 </body>
